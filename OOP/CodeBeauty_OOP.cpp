@@ -56,7 +56,7 @@ public:
 
 };
 
-class Developer: Employee{
+class Developer:public Employee{
 public:
     string FavProgrammingLanguage;
     Developer(string name, string company, int age, string favProgrammingLanguage)
@@ -96,6 +96,7 @@ int main()
 
     Developer d = Developer("Tommy", "Shelby Company Limited", 25, "C++");
     d.FixBug();
+    d.AskForPromotion();
 
 
 }
