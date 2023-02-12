@@ -2,10 +2,32 @@
 using std::string;
 
 class Employee{
-public:
-    string Name;
+private:
+  string Name;
     string Company;
     int Age;
+
+public:
+    void setName(string name){
+        Name = name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setCompany(string company){
+        Company = company;
+    }
+    string getCompany(){
+        return Company;
+    }
+    void setAge(int age){
+        Age = age;
+    }
+    int getAge(){
+        return Age;
+    }
+    
+  
 
     void IntroduceYourself(){
         std::cout << "Name -" << Name << std::endl;
@@ -35,6 +57,8 @@ int main()
     // employee1.Company = "Earth";
     // employee1.Age = 12;
     employee1.IntroduceYourself();
+
+    
 
 
 }
