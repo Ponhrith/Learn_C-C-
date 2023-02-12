@@ -24,4 +24,11 @@ int main()
     employee1.Age = 16;
     employee1.IntroduceYourself();
 
+    Employee employee2;
+    employee1.Name = "Le Petit Prince";
+    employee1.Company = "Earth";
+    employee1.Age = 12;
+    employee1.IntroduceYourself();
+
+
 }
