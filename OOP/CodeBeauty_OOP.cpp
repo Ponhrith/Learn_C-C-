@@ -72,7 +72,7 @@ public:
 
 };
 
-class Teacher:Employee {
+class Teacher:public Employee {
 public:
     string Subject;
     void PrepareLesson(){
@@ -115,6 +115,7 @@ int main()
     Developer d = Developer("Tommy", "Shelby Company Limited", 25, "C++");
     Teacher t = Teacher("Jack", "Cool School", 35, "History");
     t.PrepareLesson();
+    t.AskForPromotion();
 
 
 }
