@@ -55,6 +55,12 @@ public:
 
     }
 
+    void Work(){
+        std::cout<< Name << "is checking email, task backlog, performing tasks..." << std::endl;
+    }
+
+
+
 };
 
 class Developer:public Employee{
@@ -70,6 +76,11 @@ public:
         std::cout << getName() << "fixed bug using" << FavProgrammingLanguage << std::endl;
     }
 
+    void Work(){
+        std::cout<< Name << " is writing " << FavProgrammingLanguage << " code " << std::endl;
+    }
+
+
 };
 
 class Teacher:public Employee {
@@ -82,6 +93,9 @@ public:
     :Employee(name, company, age)
     {
         Subject = subject;
+    }
+    void Work(){
+        std::cout<< Name << " is teaching " << Subject << " code " << std::endl;
     }
 };
 
@@ -114,8 +128,11 @@ int main()
 
     Developer d = Developer("Tommy", "Shelby Company Limited", 25, "C++");
     Teacher t = Teacher("Jack", "Cool School", 35, "History");
-    t.PrepareLesson();
-    t.AskForPromotion();
+    // t.PrepareLesson();
+    // t.AskForPromotion();
+
+    d.Work();
+    t.Work();
 
 
 }
