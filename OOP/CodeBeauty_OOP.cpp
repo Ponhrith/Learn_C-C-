@@ -7,6 +7,13 @@ public:
     string Company;
     int Age;
 
+    void IntroduceYourself(){
+        std::cout << "Name -" << Name << std::endl;
+        std::cout << "Company -" << Company << std::endl;
+        std::cout << "Age -" << Age << std::endl;
+    }
+
+
 };
 
 int main()
@@ -15,5 +22,6 @@ int main()
     employee1.Name = "Pony";
     employee1.Company = "Dolphin";
     employee1.Age = 16;
+    employee1.IntroduceYourself();
 
 }
