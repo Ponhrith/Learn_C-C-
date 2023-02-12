@@ -21,6 +21,7 @@ public:
         return Company;
     }
     void setAge(int age){
+        if(age >= 18)
         Age = age;
     }
     int getAge(){
