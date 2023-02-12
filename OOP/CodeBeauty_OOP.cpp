@@ -1,9 +1,13 @@
 #include <iostream>
 using std::string;
 
-class Employee{
+class AbstractEmployee{
+    virtual void AskForPromotion()=0;
+};
+
+class Employee:AbstractEmployee{
 private:
-  string Name;
+    string Name;
     string Company;
     int Age;
 
@@ -42,27 +46,37 @@ public:
         Age = age;
     }
 
+    void AskForPromotion(){
+        if(Age>30)
+            std::cout<<Name<< " got promoted " << std::endl;
+        else
+            std::cout<<Name<< " , sorry No promotion for you!";
+
+    }
+
 
 };
 
 int main()
 {
-    Employee employee1 = Employee("Pony", "Dolphin", 16);
+    // Employee employee1 = Employee("Pony", "Dolphin", 16);
     // employee1.Name = "Pony";
     // employee1.Company = "Dolphin";
     // employee1.Age = 16;
-    employee1.IntroduceYourself();
+    // employee1.IntroduceYourself();
 
-    Employee employee2 = Employee("Le Petit Prince", "Earth", 12);
+    // Employee employee2 = Employee("Le Petit Prince", "Earth", 12);
     // employee1.Name = "Le Petit Prince";
     // employee1.Company = "Earth";
     // employee1.Age = 12;
-    employee1.IntroduceYourself();
+    // employee1.IntroduceYourself();
 
-    employee1.setAge(39);
-    std::cout << employee1.getName() << " is " << employee1.getAge() << " years old " << std::endl;
+    // employee1.setAge(39);
+    // std::cout << employee1.getName() << " is " << employee1.getAge() << " years old " << std::endl;
 
+    Employee employee1 = Employee("Pony", "Dolphin", 16);
+    Employee employee2 = Employee("Le Petit Prince", "Earth", 12);
 
-
-
+    employee1.AskForPromotion();
+    employee2.AskForPromotion();
 }
