@@ -54,6 +54,20 @@ public:
 
     }
 
+};
+
+class Developer: Employee{
+public:
+    string FavProgrammingLanguage;
+    Developer(string name, string company, int age, string favProgrammingLanguage)
+    :Employee(name, company, age)
+    {
+        FavProgrammingLanguage = favProgrammingLanguage;
+    }
+
+    void FixBug(){
+        std::cout << getName() << "fixed bug using" << FavProgrammingLanguage << std::endl;
+    }
 
 };
 
@@ -74,9 +88,14 @@ int main()
     // employee1.setAge(39);
     // std::cout << employee1.getName() << " is " << employee1.getAge() << " years old " << std::endl;
 
-    Employee employee1 = Employee("Pony", "Dolphin", 16);
-    Employee employee2 = Employee("Le Petit Prince", "Earth", 12);
+    // Employee employee1 = Employee("Pony", "Dolphin", 26);
+    // Employee employee2 = Employee("Le Petit Prince", "Earth", 12);
 
-    employee1.AskForPromotion();
-    employee2.AskForPromotion();
+    // employee1.AskForPromotion();
+    // employee2.AskForPromotion();
+
+    Developer d = Developer("Tommy", "Shelby Company Limited", 25, "C++");
+    d.FixBug();
+
+
 }
