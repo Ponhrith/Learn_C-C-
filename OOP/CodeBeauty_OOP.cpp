@@ -7,9 +7,10 @@ class AbstractEmployee{
 
 class Employee:AbstractEmployee{
 private:
-    string Name;
     string Company;
     int Age;
+protected:
+    string Name;
 
 public:
     void setName(string name){
@@ -71,6 +72,19 @@ public:
 
 };
 
+class Teacher:Employee {
+public:
+    string Subject;
+    void PrepareLesson(){
+        std::cout<< Name << " is preparing " << Subject << "lesson" << std::endl;
+    }
+    Teacher(string name, string company, int age, string subject)
+    :Employee(name, company, age)
+    {
+        Subject = subject;
+    }
+};
+
 int main()
 {
     // Employee employee1 = Employee("Pony", "Dolphin", 16);
@@ -94,9 +108,13 @@ int main()
     // employee1.AskForPromotion();
     // employee2.AskForPromotion();
 
+    // Developer d = Developer("Tommy", "Shelby Company Limited", 25, "C++");
+    // d.FixBug();
+    // d.AskForPromotion();
+
     Developer d = Developer("Tommy", "Shelby Company Limited", 25, "C++");
-    d.FixBug();
-    d.AskForPromotion();
+    Teacher t = Teacher("Jack", "Cool School", 35, "History");
+    t.PrepareLesson();
 
 
 }
