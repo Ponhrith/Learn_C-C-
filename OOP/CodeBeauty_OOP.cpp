@@ -55,7 +55,7 @@ public:
 
     }
 
-    void Work(){
+    virtual void Work(){
         std::cout<< Name << "is checking email, task backlog, performing tasks..." << std::endl;
     }
 
